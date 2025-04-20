@@ -10,7 +10,7 @@ namespace StudentRegistrations.Models
 
         [DefaultValue("")]
         public string FullName { get; set; }
-        [DefaultValue("")]
+        [DefaultValue("example@gmail.com")]
         [EmailAddress]
         public string Email { get; set; }
         [JsonIgnore]

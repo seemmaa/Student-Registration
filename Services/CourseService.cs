@@ -47,10 +47,10 @@ namespace StudentRegistrations.Services
             {
                 return null;
             }
-            if (!(course.CourseName is null)){
+            if (!(course.CourseName is null)) {
                 result.CourseName = course.CourseName; }
-
-                result.Credits = course.Credits;
+            if (!(course.Credits==0)) { 
+            result.Credits = course.Credits; }
             
            
             _context.Courses.Update(result);

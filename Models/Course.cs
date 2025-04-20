@@ -11,7 +11,7 @@ namespace StudentRegistrations.Models
         [DefaultValue("")]
        public string CourseName { get; set; }
         [Range(1, 5)]
-      
+        [DefaultValue(null)]
        public int? Credits { get; set; }
         [JsonIgnore]
         public ICollection<Registration> Registrations { get; set; } = new List<Registration>();

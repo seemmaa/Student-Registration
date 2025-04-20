@@ -49,11 +49,12 @@ namespace StudentRegistrations.Services
             {
                 return null;
             }
-            if (!(updateStudent.FullName is null))
+         
+            if (!(updateStudent.FullName.Equals("")))
             {
                 student.FullName = updateStudent.FullName;
             }
-            if (!(updateStudent.Email is null))
+            if (!(updateStudent.Email.Equals("example@gmail.com")))
             {
                 student.Email = updateStudent.Email;
             }

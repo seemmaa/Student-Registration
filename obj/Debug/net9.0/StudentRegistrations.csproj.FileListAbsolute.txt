@@ -167,3 +167,4 @@ C:\Users\myss\source\repos\StudentRegistrations\StudentRegistrations\bin\Debug\n
 C:\Users\myss\source\repos\StudentRegistrations\StudentRegistrations\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\myss\source\repos\StudentRegistrations\StudentRegistrations\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\myss\source\repos\StudentRegistrations\StudentRegistrations\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\myss\source\repos\StudentRegistrations\StudentRegistrations\obj\Debug\net9.0\StudentRegistrations.sourcelink.json

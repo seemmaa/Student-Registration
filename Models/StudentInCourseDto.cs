@@ -10,8 +10,8 @@ namespace StudentRegistrations.Models
         [DefaultValue("")]
         public string CourseName { get; set; }
         [Range(1, 5)]
-
-        public int Credits { get; set; }
+        [DefaultValue(null)]
+        public int? Credits { get; set; }
 
         public List<Student> studentRegistred {  get; set; }
     }

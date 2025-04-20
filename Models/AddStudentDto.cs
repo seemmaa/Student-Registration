@@ -7,8 +7,9 @@ namespace StudentRegistrations.Models
     {
         [DefaultValue("")]
         public string FullName { get; set; }
-        [DefaultValue("")]
+        
         [EmailAddress]
+        [DefaultValue("example@gmail.com")]
         public string Email { get; set; }
     }
 }

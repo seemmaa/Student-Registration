@@ -65,13 +65,6 @@ namespace StudentRegistrations.Services
                 return "Registration not found";
 
           
-            var courseExists = await _context.Courses.AnyAsync(c => c.Id == courseId);
-            if (!courseExists)
-                return "New course does not exist";
-
-            var studentExists = await _context.Students.AnyAsync(c => c.Id == studentId);
-            if (!studentExists)
-                return "New student does not exist";
 
             bool alreadyRegistered = await _context.Registration
                 .AnyAsync(r => r.StudentId == registration.StudentId && r.CourseId == courseId && r.Id != id);
@@ -79,9 +72,20 @@ namespace StudentRegistrations.Services
             if (alreadyRegistered)
                 return "Student is already registered to this course";
 
-
-            registration.CourseId = courseId;
-            registration.StudentId = studentId;
+            if (!(courseId == Guid.Empty))
+            { registration.CourseId = courseId;
+                var courseExists = await _context.Courses.AnyAsync(c => c.Id == courseId);
+                if (!courseExists)
+                    return "New course does not exist";
+            }
+            if (!(studentId == Guid.Empty))
+            {
+              registration.StudentId = studentId;
+                var studentExists = await _context.Students.AnyAsync(c => c.Id == studentId);
+                if (!studentExists)
+                    return "New student does not exist";
+            }
+            
             _context.Registration.Update(registration);
             await _context.SaveChangesAsync();
             return "Registration updated successfully";
